@@ -13,6 +13,7 @@ Pocket Arcade is a phone-friendly game site where every game runs in the browser
 | Quake II demo | [Qwasm2](https://github.com/GMH-Code/Qwasm2) (Yamagi Quake II → WebAssembly), build from [quake2-alfonso-x-1999](https://github.com/EmilioNicolas/quake2-alfonso-x-1999) | Engine GPL-2.0 |
 | DOOM shareware | Chocolate Doom → WebAssembly, from [freedoom-web](https://github.com/dzod992-bit/freedoom-web) ([source](https://github.com/dzod992-bit/freedoom-web/tree/main/source)) | Engine GPL-2.0 |
 | Freedoom: Phase 2 | [Freedoom](https://freedoom.github.io/) | BSD-3-Clause |
+| Voxel Sandbox | [freaxnx01/game-voxel-sandbox](https://github.com/freaxnx01/game-voxel-sandbox) (touch controls added) | MIT |
 | Blockfall | Original to this site | — |
 | HexGL | [BKcore/HexGL](https://github.com/BKcore/HexGL) | MIT |
 | Hextris | [hextris/hextris](https://github.com/hextris/hextris) | GPL-3.0 |

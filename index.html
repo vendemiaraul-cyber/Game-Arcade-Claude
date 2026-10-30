@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15131f">
 <title>Pocket Arcade</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +28,9 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
 [hidden]{display:none!important}
 html,body{background:var(--bg);color:var(--fg)}
 body{font-family:var(--body);font-size:15px;line-height:1.5;-webkit-tap-highlight-color:transparent}
@@ -118,13 +127,13 @@ button.btn{font-family:var(--display)}
 
 <div class="wrap">
   <header>
-    <div class="credits">Insert coin · <b>8 games</b> · all run on this site</div>
+    <div class="credits">Insert coin · <b>9 games</b> · all run on this site</div>
     <h1 class="marquee">Pocket<br><span>Arcade</span></h1>
-    <p class="sub">Quake II and DOOM compiled to WebAssembly, a block-stacker of our own, and five open-source games from GitHub. Every one plays right here, with touch controls for iPhone.</p>
+    <p class="sub">Quake II and DOOM compiled to WebAssembly, an open-world block-building sandbox, a block-stacker of our own and five more open-source games from GitHub. Every one plays right here, with touch controls for iPhone.</p>
   </header>
 
   <section>
-    <h2>Featured cabinets</h2>
+    <h2>Specials</h2>
     <div class="featured">
       <article class="cab">
         <div class="screen"><canvas data-scene="q2"></canvas><span class="engine">Qwasm2 · Yamagi Quake II → WASM</span></div>
@@ -143,20 +152,20 @@ button.btn{font-family:var(--display)}
           </div>
         </div>
       </article>
-
       <article class="cab">
-        <div class="screen"><canvas data-scene="doom"></canvas><span class="engine">Chocolate Doom → WASM</span></div>
+        <div class="screen"><canvas data-scene="voxel"></canvas><span class="engine">three.js · procedural world</span></div>
         <div class="cab-body">
-          <h3>DOOM</h3>
-          <div class="chips"><span class="chip touch">Touch pad</span><span class="chip">Native engine</span><span class="chip">Shareware · 2.3 MB</span></div>
-          <p>The real DOOM shareware episode, Knee-Deep in the Dead, unpacked in your browser from id Software’s original 1995 archive and run by a native WebAssembly engine.</p>
+          <h3>Voxel Sandbox</h3>
+          <div class="chips"><span class="chip touch">Touch pad</span><span class="chip">Build &amp; break</span><span class="chip">Auto-saves</span></div>
+          <p>An open-world block-building sandbox. Explore generated hills and forests, break blocks and place new ones from a hotbar of nine materials. Your world saves on this phone.</p>
           <ol class="steps">
-            <li>Tap <b>Play!</b></li>
-            <li>Tap Play! again to start E1M1.</li>
-            <li>Freedoom or your own WAD are options too.</li>
+            <li>Tap <b>Play!</b>, then Tap to Play.</li>
+            <li>Stick walks, drag anywhere to look.</li>
+            <li>Break, Place, Jump, and Fly to soar.</li>
           </ol>
           <div class="actions">
-            <button class="btn play" type="button" data-game="doom">▶ Play!</button>
+            <button class="btn play" type="button" data-game="voxel">▶ Play!</button>
+            <a class="btn ghost" href="https://github.com/freaxnx01/game-voxel-sandbox" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
@@ -164,22 +173,32 @@ button.btn{font-family:var(--display)}
   </section>
 
   <section>
-    <h2>House game · plays right here</h2>
-    <div class="house">
-      <canvas id="attract" width="110" height="176" aria-hidden="true"></canvas>
-      <div class="info">
-        <h3>Blockfall</h3>
-        <div class="chips"><span class="chip touch">Touch ready</span><span class="chip">Swipe or buttons</span><span class="chip">7-bag pieces</span></div>
-        <p>Our own falling-block puzzler. Swipe to move, tap the board to rotate, swipe down hard to drop. Clear lines to level up.</p>
-        <div class="best">Best score on this device: <b id="bestLbl">0</b></div>
+    <h2>All games</h2>
+    <div class="rack">
+      <div class="cart">
+        <div class="top"><h4>Quake II</h4><span class="lic">GPL · WASM</span></div>
+        <div class="chips"><span class="chip touch">Touch pad</span></div>
+        <p>The id Software shooter on the Yamagi engine. Plays the 3-level demo, or your own full-game pak files.</p>
+        <div class="actions"><button class="btn play" type="button" data-game="quake2">▶ Play!</button><a class="btn ghost" href="https://github.com/GMH-Code/Qwasm2" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <div class="cart">
+        <div class="top"><h4>DOOM</h4><span class="lic">GPL · WASM</span></div>
+        <div class="chips"><span class="chip touch">Touch pad</span></div>
+        <p>The real shareware episode, Knee-Deep in the Dead, on the Chocolate Doom engine. Freedoom and your own WADs work too.</p>
+        <div class="actions"><button class="btn play" type="button" data-game="doom">▶ Play!</button></div>
+      </div>
+      <div class="cart">
+        <div class="top"><h4>Voxel Sandbox</h4><span class="lic">MIT · three.js</span></div>
+        <div class="chips"><span class="chip touch">Touch pad</span></div>
+        <p>Open-world block building: explore, break and place blocks, fly over the hills.</p>
+        <div class="actions"><button class="btn play" type="button" data-game="voxel">▶ Play!</button><a class="btn ghost" href="https://github.com/freaxnx01/game-voxel-sandbox" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <div class="cart">
+        <div class="top"><h4>Blockfall</h4><span class="lic">Original · JS</span></div>
+        <div class="chips"><span class="chip touch">Swipe or buttons</span></div>
+        <p>Our own falling-block puzzler. Swipe to move, tap to rotate, flick down to drop. Best on this phone: <b id="bestLbl">0</b></p>
         <div class="actions"><button class="btn play" id="startBtn" type="button">▶ Play!</button></div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>More from GitHub</h2>
-    <div class="rack">
       <div class="cart">
         <div class="top"><h4>HexGL</h4><span class="lic">MIT · WebGL</span></div>
         <div class="chips"><span class="chip touch">Touch ready</span></div>
@@ -260,6 +279,15 @@ function scene(c){
   const kind=c.dataset.scene, r=c.getBoundingClientRect(), d=window.devicePixelRatio||1;
   c.width=Math.max(1,r.width*d); c.height=Math.max(1,r.height*d);
   const x=c.getContext('2d'), w=c.width, h=c.height;
+  if(kind==='voxel'){
+    const sky=x.createLinearGradient(0,0,0,h);sky.addColorStop(0,'#6fb2e8');sky.addColorStop(1,'#bfe2f7');x.fillStyle=sky;x.fillRect(0,0,w,h);
+    const b=Math.max(8,Math.round(h/9));let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+    for(let col=0;col*b<w;col++){const top=Math.round(h*0.45/b+Math.sin(col*0.45)*1.6+Math.sin(col*0.17)*1.2);
+      for(let row=top;row*b<h;row++){x.fillStyle=row===top?'#5fae3c':(row<top+3?'#8a5a34':'#7d7f86');x.fillRect(col*b,row*b,b-1,b-1);
+        if(row===top){x.fillStyle='rgba(255,255,255,.12)';x.fillRect(col*b,row*b,b-1,Math.max(2,b*0.2));}}
+      if(rnd()<0.18){x.fillStyle='#6b4a2b';x.fillRect(col*b,(top-2)*b,b-1,2*b-1);x.fillStyle='#2f7a35';x.fillRect((col-1)*b,(top-4)*b,3*b-1,2*b-1);}}
+    return;
+  }
   const g=x.createLinearGradient(0,0,0,h);
   if(kind==='q2'){g.addColorStop(0,'#3a2a20');g.addColorStop(1,'#120c10');}
   else{g.addColorStop(0,'#4a1616');g.addColorStop(1,'#140808');}
@@ -398,7 +426,7 @@ addEventListener('keydown',e=>{if(!running)return;const k=e.key;
 
 
 /* ---------- in-site player ---------- */
-const GAMES={quake2:'quake2/index.html',doom:'doom/index.html',hexgl:'games/hexgl/index.html',hextris:'games/hextris/index.html','2048':'games/2048/index.html',adarkroom:'games/adarkroom/index.html','clumsy-bird':'games/clumsy-bird/index.html'};
+const GAMES={quake2:'quake2/index.html',voxel:'games/voxel-sandbox/index.html',doom:'doom/index.html',hexgl:'games/hexgl/index.html',hextris:'games/hextris/index.html','2048':'games/2048/index.html',adarkroom:'games/adarkroom/index.html','clumsy-bird':'games/clumsy-bird/index.html'};
 const OWN_BAR={quake2:1,doom:1};
 const player=$('player'),frame=$('playerFrame');
 function openGame(id){
@@ -421,7 +449,7 @@ function route(){const id=location.hash.slice(1);if(GAMES[id])openGame(id);}
 addEventListener('hashchange',route);route();
 /* attract-mode preview on the page */
 (function attract(){
-  const c=$('attract'),x=c.getContext('2d'),d=window.devicePixelRatio||1;
+  const c=$('attract');if(!c)return;const x=c.getContext('2d'),d=window.devicePixelRatio||1;
   const sizeIt=()=>{const r=c.getBoundingClientRect();c.width=r.width*d;c.height=r.height*d;};sizeIt();addEventListener('resize',sizeIt);
   const cols=['I','O','T','S','Z','J','L'];let stack=[],fall=null,tick=0;
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
