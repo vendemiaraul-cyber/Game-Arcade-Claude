@@ -1,6 +1,10 @@
-# Pocket Arcade
+# Game-Arcade-Claude
 
-A phone-friendly game site where every game runs in the browser.
+A Arcade Claude made (wow, even Quake II is included!)
+
+**Play:** https://vendemiaraul-cyber.github.io/Game-Arcade-Claude/
+
+Pocket Arcade is a phone-friendly game site where every game runs in the browser.
 
 ## Games and licences
 
